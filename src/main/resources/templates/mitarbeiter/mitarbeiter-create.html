@@ -26,6 +26,12 @@
                         <div class="col">
                             <label for="inputFirstName4">First Name</label>
                             <input type="text" class="form-control" id="inputFirstName4" placeholder="First Name" th:field="*{firstName}">
+                            <!-- error part-->
+                            <div class="text-danger" th:if="${#fields.hasErrors('firstName')}"> <!-- if firstName has anyError , then show me this division:-->
+                                <ol>
+                                    <li th:each="error : ${#fields.errors()}" th:text="${error}"></li>
+                                </ol>
+                            </div>
                         </div>
                         <div class="col">
                             <label for="inputLastName4">Last Name</label>
