@@ -41,15 +41,15 @@ public class MitarbeiterController {
         //model.addAttribute("employeeList", employeeService.readAllEmployees());
         //but it is one another business logic, according to Single responsibility you should use another method for returning mitarbeiter-list
 
-        return "redirect:mitarbeiter/list"; // endpoints , return the following method
+        return "redirect:/mitarbeiter/list"; // endpoints , return the following method
     }
 
     @GetMapping("/list")
     public String listMitarbeiters(Model model){
 
-        model.addAttribute("employeeList",mitarbeiterService.readAllMitarbeiters());
+        model.addAttribute("mitarbeiterList",mitarbeiterService.readAllMitarbeiters());
 
-        return "mitarbeiter/mitarbeiter-list";
+        return "mitarbeiter/mitarbeiter-list"; // html file paths
 
     }
 
