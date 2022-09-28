@@ -30,7 +30,7 @@ public class Mitarbeiter {
     @Size(max = 12, min = 2)
     private String firstName;
 
-
+    @NotBlank
     private String lastName;
 
 
