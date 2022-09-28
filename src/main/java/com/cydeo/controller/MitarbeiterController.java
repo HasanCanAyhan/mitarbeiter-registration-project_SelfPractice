@@ -35,9 +35,22 @@ public class MitarbeiterController {
 
     @PostMapping("/insert")
     public String insertMitarbeiter(@ModelAttribute("mitarbeiter") Mitarbeiter mitarbeiter){ // to capture object which is sent from UI-part
+
         mitarbeiterService.saveMitarbeiter(mitarbeiter);
 
+        //model.addAttribute("employeeList", employeeService.readAllEmployees());
+        //but it is one another business logic, according to Single responsibility you should use another method for returning mitarbeiter-list
+
+        return "redirect:mitarbeiter/list"; // endpoints , return the following method
+    }
+
+    @GetMapping("/list")
+    public String listMitarbeiters(Model model){
+
+        model.addAttribute("employeeList",mitarbeiterService.readAllMitarbeiters());
+
         return "mitarbeiter/mitarbeiter-list";
+
     }
 
 
