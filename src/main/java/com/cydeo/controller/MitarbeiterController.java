@@ -37,7 +37,6 @@ public class MitarbeiterController {
     public String insertMitarbeiter(@ModelAttribute("mitarbeiter") Mitarbeiter mitarbeiter){ // to capture object which is sent from UI-part
         mitarbeiterService.saveMitarbeiter(mitarbeiter);
 
-        mitarbeiterService.readAllMitarbeiters();
         return "mitarbeiter/mitarbeiter-list";
     }
 
