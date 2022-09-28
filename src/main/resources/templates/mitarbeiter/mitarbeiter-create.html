@@ -21,7 +21,7 @@
                 Welcome to Mitarbeiter Registration Page
             </h2>
             <div class="card-body">
-                <form th:object="${mitarbeiter}">
+                <form th:object="${mitarbeiter}" th:action="@{/mitarbeiter/insert}" method="post">
                     <div class="form-row">
                         <div class="col">
                             <label for="inputFirstName4">First Name</label>
