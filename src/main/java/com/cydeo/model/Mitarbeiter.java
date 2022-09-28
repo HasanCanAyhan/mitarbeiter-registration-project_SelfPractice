@@ -27,7 +27,7 @@ public class Mitarbeiter {
     //@NotBlank -> @NotNull + @NotEmpty + @NotBlank
 
     @NotBlank
-    @Size(max = 12, min = 2)
+    @Size(max = 12, min = 2) // index 1 , index 2
     private String firstName;
 
     @NotBlank
